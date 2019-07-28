@@ -36,3 +36,21 @@ MongoDB server version: 3.6.0
 ```
 
 
+# Docker Image Restore Initial Data
+
+Setup initial
+
+```sh
+docker run -it --rm  --name glaciar_etl \
+      -e GLACIAR_MOGNO_HOST=hostname.server.com \
+	  -e GLACIAR_MONGO_PORT=2222 \
+	   glaciar/glaciar.org-etl:1.0
+```
+
+o bien 
+
+```sh
+docker run -it --rm  --name glaciar_etl \
+      --env-file ./.env  \
+	   glaciar/glaciar.org-etl:1.0
+```
