@@ -16,7 +16,7 @@ function do_dispatch
 
 if [ -z "$1" ] || [ $1 == "HELP" ]
 then
-    echo "Usage: dispatch [ ETL1 | ETL2 | ETL3 | ETL4 | ETL5 | RESTORE | HELP (default) ]"
+    echo "Usage: dispatch [ ETL1 | ETL2 | ETL3 | ETL4 | ETL5 | ETL-ALL | RESTORE | HELP (default) ]"
     exit 0
 fi
 
@@ -50,6 +50,16 @@ if [ $1 == "ETL5" ]; then
     exit 0
 fi
 
+if [ $1 == "ETL-ALL" ]; then
+    echo "Work for ETL-ALL"
+    do_dispatch "ETL5-DS01"
+    do_dispatch "ETL5-DS02"
+    do_dispatch "ETL5-DS03"
+    do_dispatch "ETL5-DS04"
+    do_dispatch "ETL5-DS05"
+    exit 0
+fi
+
 if [ $1 == "RESTORE" ]; then
     echo "Work for RESTORE"
     ./restore.sh
@@ -58,5 +68,5 @@ fi
 
 
 echo "ERROR: Doing nothing with $1"
-echo "Usage: dispatch [ ETL1 | ETL2 | ETL3 | ETL4 | ETL5 | RESTORE | HELP (default) ]"
+echo "Usage: dispatch [ ETL1 | ETL2 | ETL3 | ETL4 | ETL5 | ETL-ALL | RESTORE | HELP (default) ]"
 exit 1
