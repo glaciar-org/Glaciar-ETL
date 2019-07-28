@@ -64,5 +64,3 @@ typings/
 # Exchange data
 exchange_data/dump/*
 
-
-ETL-pipelines/ETL1-DS01 copy/

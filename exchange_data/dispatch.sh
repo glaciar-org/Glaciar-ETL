@@ -28,25 +28,25 @@ fi
 
 if [ $1 == "ETL2" ]; then
     echo "Work for ETL2"
-    do_dispatch "ETL1-DS02"
+    do_dispatch "ETL2-DS02"
     exit 0
 fi
 
 if [ $1 == "ETL3" ]; then
     echo "Work for ETL3"
-    do_dispatch "ETL1-DS03"
+    do_dispatch "ETL3-DS03"
     exit 0
 fi
 
 if [ $1 == "ETL4" ]; then
     echo "Work for ETL4"
-    do_dispatch "ETL1-DS04"
+    do_dispatch "ETL4-DS04"
     exit 0
 fi
 
 if [ $1 == "ETL5" ]; then
     echo "Work for ETL5"
-    do_dispatch "ETL1-DS05"
+    do_dispatch "ETL5-DS05"
     exit 0
 fi
 

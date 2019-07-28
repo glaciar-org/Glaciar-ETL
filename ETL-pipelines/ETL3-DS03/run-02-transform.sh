@@ -58,6 +58,8 @@ echo "----------------------------------"
 
 declare -a arr=(
     "crbuoy"
+    "crbuoy2018"
+    "crbuoy2017"
     "crbuoy2016"
     "crbuoy2015"
 )
