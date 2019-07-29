@@ -100,17 +100,18 @@ function mongodbCreateIndex
 
     if [ "PWD:"${MONGODB_PASS} != "PWD:" ]; then
 
-        echo "mongodbCreateIndex -->  WIP "
-        # mongo    ${MONGODB_BASE} \
-        #       -h ${MONGODB_HOST}  \
-        #       -u ${MONGODB_USER} -p ${MONGODB_PASS} \
-        #       --authenticationDatabase  ${MONGODB_BASE} \
-        #       --eval "db.getCollection('${1}').createIndex({'FECHA_HORA':1})"
+        echo "mongodbCreateIndex -->  Fixed! "
+        mongo ${MONGODB_BASE} \
+              -host ${MONGODB_HOST}  \
+                 -u ${MONGODB_USER} -p ${MONGODB_PASS} \
+              --authenticationDatabase  ${MONGODB_BASE} \
+              --eval "db.getCollection('${1}').createIndex({'FECHA_HORA':1})"
     fi
 
     if [ "PWD:"${MONGODB_PASS} == "PWD:" ]; then
 
         mongo ${MONGODB_BASE} \
+               -host ${MONGODB_HOST}  \
               --eval "db.getCollection('${1}').createIndex({'FECHA_HORA':1})"
     fi
 }

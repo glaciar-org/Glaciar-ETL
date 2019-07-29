@@ -24,14 +24,16 @@ for DATASET_ID in "${arr[@]}"
 do
     echo -e "\n_________\n [${DATASET_ID}]:" 
 
-    curl  -o "STAGE_01_Download/${DATASET_ID}.zip" https://data.buenosaires.gob.ar/api/datasets/HJWHSFZmyl/download
+    # curl  -o "STAGE_01_Download/${DATASET_ID}.zip" https://data.buenosaires.gob.ar/api/datasets/HJWHSFZmyl/download
 
-    unzip    "STAGE_01_Download/${DATASET_ID}.zip" -d STAGE_01_Download/tmp/
+    # unzip    "STAGE_01_Download/${DATASET_ID}.zip" -d STAGE_01_Download/tmp/
 
-    find . -name "${DATASET_ID}.csv" -exec mv {} STAGE_01_Download \;
+    # find . -name "${DATASET_ID}.csv" -exec mv {} STAGE_01_Download \;
 
-    rm -rf STAGE_01_Download/tmp/
-    rm     STAGE_01_Download/${DATASET_ID}.zip
+    # rm -rf STAGE_01_Download/tmp/
+    # rm     STAGE_01_Download/${DATASET_ID}.zip
+
+    curl  -o "STAGE_01_Download/${DATASET_ID}.csv" http://cdn.buenosaires.gob.ar/datosabiertos/datasets/calidad-de-aire/calidad-de-aire-2009-2018.csv
 
     echo -e "\n $ head STAGE_01_Download/${DATASET_ID}.csv \n"
 
