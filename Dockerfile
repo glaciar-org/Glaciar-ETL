@@ -1,7 +1,7 @@
 FROM mongo:4.0 
 
 RUN apt-get update && \
-    apt-get install -y net-tools iproute2 curl
+    apt-get install -y net-tools iproute2 curl vim
 
 RUN mkdir -p /Glaciar-ETL/exchange_data &&  \
     mkdir -p /Glaciar-ETL/ETL-pipelines
