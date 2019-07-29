@@ -67,9 +67,24 @@ Runnig: dispatch ANYTHING
 ERROR: Doing nothing with ANYTHIN
 Usage: dispatch [ ETL1 | ETL2 | ETL3 | ETL4 | ETL5 | RESTORE | HELP (default) ]
 
-docker run -it --rm --name GETL glaciar/glaciar.org-etl:1.1 ./dispatch.sh RESTORE                                     1 ↵
+docker run -it --rm --name GETL glaciar/glaciar.org-etl:1.1 ./dispatch.sh RESTORE
 Runnig: dispatch RESTORE 
 Work for RESTORE
 Mongorestore from: /exchange_data/dump 
 Uage with: docker run -e GLACIAR_MONGO_HOST= -e GLACIAR_MONGO_PORT=
+```
+
+Version 1.2 con parametrizado input:
+
+```sh
+docker run -it --rm  --name glaciar_etl \
+      --env-file ./.env  \
+	   glaciar/glaciar.org-etl:1.2  ./dispatch.sh ETL1
+```
+
+o bien 
+
+```sh
+docker container run -e "DOCKER_HOST=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+')"
+
 ```
